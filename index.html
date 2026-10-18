@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151228">
+  <meta name="description" content="夢の向こうへ — 一起踏進節奏的世界。">
+  <title>夢の向こうへ — NEON BEAT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky-glow glow-one"></div><div class="sky-glow glow-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="logo" href="#top" aria-label="NEON BEAT 首頁"><span class="logo-mark">♪</span><span>NEON<span class="logo-light">BEAT</span></span></a>
+      <div class="top-label"><span class="live-dot"></span> RHYTHM GAME <span class="top-divider">/</span> VOL. 01</div>
+      <button class="sound-toggle" id="soundToggle" aria-label="播放歌曲預覽">♫ <span>SONG PREVIEW</span></button>
+    </header>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow"><span>✦</span> YOUR NEXT RHYTHM ADVENTURE</div>
+        <h1>夢の<span>向こうへ</span></h1>
+        <p class="hero-subtitle">跨越音符，奔向夢想的另一端。</p>
+        <div class="hero-chips"><span>♪ ORIGINAL SONG</span><span>◈ 128 BPM</span><span>✧ 4 LANES</span></div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="spark spark-a">✦</div><div class="spark spark-b">✧</div><div class="spark spark-c">·</div>
+        <img class="mascot" src="assets/character-mira-v2.png" alt="直立站姿、長黑髮紅眼的原創動漫角色">
+        <div class="art-caption"><span>♥</span> MIRA / YOUR RHYTHM PARTNER</div>
+      </div>
+    </section>
+
+    <section class="game-layout" aria-label="節奏遊戲">
+      <div class="game-card">
+        <div class="game-heading"><div><span class="section-kicker">NOW PLAYING</span><h2>夢の向こうへ <span class="title-romaji">Yume no Mukou e</span></h2></div><div class="bpm-badge"><b>128</b><span>BPM</span></div></div>
+        <div class="stage" id="stage">
+          <div class="stage-stars"></div>
+          <svg class="perspective-grid" viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M280 0 40 700 M390 0 270 700 M500 0 500 700 M610 0 730 700 M720 0 960 700"/>
+            <path d="M349 175 651 175 M314 350 686 350 M246 525 754 525" class="cross-lines"/>
+          </svg>
+          <div class="lanes" id="lanes"></div>
+          <div class="hit-flash" id="hitFlash" aria-hidden="true"></div>
+          <div class="stage-combo" id="stageCombo" aria-live="polite" aria-atomic="true"><span>COMBO</span><b id="stageComboValue">0</b></div>
+          <div class="hit-line"><span>✦</span></div>
+          <div class="judgment" id="judgment" aria-live="polite"></div>
+          <div class="stage-message" id="stageMessage"><div class="message-orbit">♪</div><b>Are you ready?</b><span>PRESS START TO PLAY</span></div>
+          <div class="lane-keys"><button data-lane="0">D</button><button data-lane="1">F</button><button data-lane="2">J</button><button data-lane="3">K</button></div>
+          <div class="pause-overlay hidden" id="pauseOverlay"><b>PAUSED</b><span>按空白鍵繼續</span></div>
+        </div>
+        <div class="game-foot"><span id="songTime">00:00 / --:--</span><div class="beat-indicator"><i></i><i></i><i></i><i></i></div><span>KEYBOARD <b>D F J K</b></span></div>
+      </div>
+      <aside class="sidebar">
+        <div class="score-card"><div class="card-kicker">YOUR SCORE <span>✧</span></div><div class="score-value" id="score">000000</div><div class="score-divider"></div><div class="score-stats"><div><b id="accuracy">100.0%</b><span>ACCURACY</span></div><div><b id="maxCombo">0</b><span>MAX COMBO</span></div></div><div class="combo-label"><span>COMBO</span><b id="combo">0</b></div><div class="combo-meter"><i id="comboMeter"></i></div></div>
+        <div class="settings-card"><div class="card-kicker">GAME SETTINGS <span>⚙</span></div><label class="setting-row"><span>NOTE SPEED <b id="speedLabel">6</b></span><input id="speed" type="range" min="4" max="9" value="6"></label><label class="setting-row"><span>DIFFICULTY</span><select id="difficulty"><option value="easy">EASY</option><option value="normal" selected>NORMAL</option><option value="hard">HARD</option></select></label><button class="start-button" id="startBtn"><span>▶</span> START GAME <i>01</i></button><button class="reset-button" id="resetBtn">↻　重新開始</button></div>
+        <div class="help-card"><div class="help-icon">✦</div><div><b>Catch the beat!</b><p>短音點按；長音按住對應按鍵，直到長條尾端抵達判定線。</p></div></div>
+      </aside>
+    </section>
+    <footer><span>NEON BEAT <i>✦</i> A LITTLE RHYTHM, A BIG DREAM</span><span>MADE WITH ♡ FOR MUSIC</span></footer>
+  </main>
+  <audio id="song" src="assets/yume-no-mukou-e.m4a" preload="metadata"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
