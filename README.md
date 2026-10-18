@@ -1,26 +1,3 @@
-# NEON BEAT · 夢の向こうへ
-
-一頁式下落音遊，使用純 HTML、CSS 和 JavaScript，適合部署到 GitHub Pages。
-
-## 部署到 GitHub Pages
-
-1. 將此資料夾的內容推送到 GitHub repository。
-2. 在 repository 的 **Settings → Pages** 中，將 Build and deployment 設為 **Deploy from a branch**。
-3. 選擇 `main` 分支與 `/ (root)` 資料夾並儲存。
-4. 等待 GitHub Pages 發布完成後，使用設定頁顯示的網址開啟遊戲。
-
-請保留以下檔案相對位置：
-
-```text
-index.html
-style.css
-script.js
-assets/yume-no-mukou-e.m4a
-assets/character-mira-v2.png
-```
-
-上傳時不需要包含 `work/`、`outputs/` 或 macOS 產生的 `.DS_Store`。舊版人物圖已移到 `work/archive/`，目前網頁使用的是 `assets/character-mira-v2.png`。
-
 ## 操作
 
 - 點擊 **START GAME** 或按空白鍵開始。
